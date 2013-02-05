@@ -1,4 +1,4 @@
-maintainer        "37signals"
-maintainer_email  "sysadmins@37signals.com"
+maintainer        "Joshua Sierles"
+maintainer_email  "joshua@rubytune.com"
 description       "Configures SSL certificate"
-version           "0.1"
+version           "0.2"
