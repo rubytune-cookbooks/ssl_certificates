@@ -10,7 +10,7 @@ define :ssl_certificate do
     cookbook "ssl_certificates"
     owner "root"
     group "www-data"
-    variables 'crt' => cert["crt"]
+    variables 'cert' => cert["crt"]
   end
 
   template "#{node[:ssl_certificates][:path]}/#{name}.key" do
@@ -19,7 +19,7 @@ define :ssl_certificate do
     cookbook "ssl_certificates"
     owner "root"
     group "www-data"
-    variables 'crt' => cert['key']
+    variables 'cert' => cert['key']
   end
 
   if cert['intermediate']
@@ -29,7 +29,7 @@ define :ssl_certificate do
       cookbook "ssl_certificates"
       owner "root"
       group "www-data"
-      variables 'crt' => cert['intermediate'] ? cert['crt'] + cert['intermediate'] : cert['crt']
+      variables 'cert' => cert['intermediate'] ? cert['crt'] + cert['intermediate'] : cert['crt']
     end
   end
 end
